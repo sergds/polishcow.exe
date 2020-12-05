@@ -1,3 +1,5 @@
 # Polish Cow
 
-dancing on white background.
+dancing on white background. (with music)
+
+![screenshot](screenshot.png)
