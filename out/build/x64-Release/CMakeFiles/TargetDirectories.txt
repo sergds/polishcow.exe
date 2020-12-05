@@ -1,0 +1,4 @@
+D:/VS/polishcow/out/build/x64-Release/CMakeFiles/polishcow.dir
+D:/VS/polishcow/out/build/x64-Release/CMakeFiles/Copy.dir
+D:/VS/polishcow/out/build/x64-Release/CMakeFiles/edit_cache.dir
+D:/VS/polishcow/out/build/x64-Release/CMakeFiles/rebuild_cache.dir

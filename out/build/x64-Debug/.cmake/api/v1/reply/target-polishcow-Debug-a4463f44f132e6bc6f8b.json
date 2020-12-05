@@ -1,0 +1,218 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "polishcow.exe"
+		},
+		{
+			"path" : "polishcow.pdb"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"link_directories",
+			"target_link_libraries",
+			"include_directories"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 15,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 11,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 21,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 10,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 3,
+					"define" : "SFML_STATIC"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 4,
+					"path" : "D:/VS/polishcow/thirdparty/ziplib/Source/ZipLib"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "C:/dev/SFML-2.5.1/include"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"id" : "polishcow::@6890427a1f51a3e7e1df",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "/machine:x64 /debug /INCREMENTAL /subsystem:console",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-LIBPATH:D:\\VS\\polishcow\\thirdparty\\ziplib\\Bin\\x64\\Release",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "C:\\dev\\SFML-2.5.1\\lib\\sfml-graphics-s-d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "C:\\dev\\SFML-2.5.1\\lib\\sfml-audio-s-d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "ZipLib.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\dev\\SFML-2.5.1\\lib\\sfml-window-s-d.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "gdi32.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "OpenGL32.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\dev\\SFML-2.5.1\\lib\\freetype.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\dev\\SFML-2.5.1\\lib\\openal32.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\dev\\SFML-2.5.1\\lib\\sfml-system-s-d.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "winmm.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\dev\\SFML-2.5.1\\lib\\vorbisfile.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\dev\\SFML-2.5.1\\lib\\vorbisenc.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\dev\\SFML-2.5.1\\lib\\vorbis.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\dev\\SFML-2.5.1\\lib\\ogg.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "C:\\dev\\SFML-2.5.1\\lib\\flac.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "polishcow",
+	"nameOnDisk" : "polishcow.exe",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				1
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "polishcow.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "polishcow.h",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "EXECUTABLE"
+}

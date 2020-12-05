@@ -1,0 +1,9 @@
+# ninja log v5
+0	16	0	clean	9992afb1f91dc381
+1	1360	628874509	CMakeFiles/polishcow.dir/polishcow.cpp.obj	3b075fc3e0ec6e08
+1362	2584	628874510	polishcow.exe	1946ac994a6a985d
+2585	2671	0	CMakeFiles/Copy	8565e7047929f980
+1	911	628875773	CMakeFiles/polishcow.dir/polishcow.cpp.obj	3b075fc3e0ec6e08
+1	1719	628875889	CMakeFiles/polishcow.dir/cowfile.cpp.obj	254a8f051cab8fb8
+1722	2385	628875890	polishcow.exe	417006c4a66f9bd2
+2385	2475	0	CMakeFiles/Copy	8565e7047929f980
