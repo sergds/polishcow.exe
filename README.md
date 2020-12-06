@@ -1,5 +1,13 @@
 # Polish Cow
 
-dancing on white background with music (i'm afraid that it can be taken down because of that)
+dancing on white background with music
 
 ![screenshot](screenshot.png)
+
+# Build Requirements
+SFML (graphics, sound modules)
+
+OpenAL (for SFML's sound module)
+
+# Runtime Requirements
+OpenAL (for SFML's sound module)
