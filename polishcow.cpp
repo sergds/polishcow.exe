@@ -9,6 +9,7 @@ using namespace std;
 const char* megadataFile = "megadata.cow";
 bool isQuitting = false;
 
+/*Logs Stuff To Console*/
 void Log(string msg) {
     cout << msg << endl;
 }
@@ -18,12 +19,14 @@ struct Frame {
     double duration; // in seconds
 };
 
+/*Animation Class*/
 class Animation {
     std::vector<Frame> frames;
     double totalLength;
     double totalProgress;
     sf::Sprite* target;
 public:
+    bool isLooping = false;
     Animation(sf::Sprite& target) {
         this->target = &target;
         totalProgress = 0.0;
@@ -44,7 +47,8 @@ public:
                 target->setTextureRect((frame).rect);
                 if (frame.rect == sf::IntRect(0, 504, 200, 167)) {
                     frames.begin();
-                    totalProgress = 0.0f;
+                    if(isLooping)
+                        totalProgress = 0.0f;
                     }
                 break; // we found our frame
             }
@@ -52,20 +56,22 @@ public:
         }
     }
 };
-
+/* Renderer Thread */
 void RendererThread(sf::RenderWindow* window) {
         Log("RenderThread Initializing.");
         window->setActive(true);
-        window->setFramerateLimit(15);
+        window->setFramerateLimit(20); // Limit FPS To 20 so we don't use 100% of the cpu
         sf::Texture tenor;
         sf::Sprite cow;
         sf::Clock deltaClock;
         sf::Time dt;
-        Animation dance(cow);
         if (!tenor.loadFromFile("megadata/tenor.png")) {
             isQuitting = true;
             return;
         }
+        // Setup Animation
+        Animation dance(cow);
+        dance.isLooping = true;
         cow.setTexture(tenor, true);
         dance.addFrame({sf::IntRect(0, 0, 200, 167), 0.1 }); // 1
         dance.addFrame({ sf::IntRect(603, 336, 200, 167), 0.1 }); // 2
@@ -88,7 +94,6 @@ void RendererThread(sf::RenderWindow* window) {
         dance.addFrame({ sf::IntRect(603, 168, 200, 167), 0.1 }); // 19
         dance.addFrame({ sf::IntRect(0, 504, 200, 167), 0.1 }); // 20
         cow.setPosition(sf::Vector2f(150, 150));
-        string wintitle;
         while (!isQuitting) {
             //shape.setOrigin(sf::Vector2f(shape.getScale().x * 2, shape.getScale().y * 2));
             //shape.setRotation(shape.getRotation() + 5.f * dt.asSeconds());
@@ -103,10 +108,12 @@ void RendererThread(sf::RenderWindow* window) {
         Log("RenderThread finished.");
 }
 
+/* Main Function */
 int main()
 {
     Log("polishcow.exe is Starting.");
     Log("Made by SergDS in 2020");
+    // Start Preparing Loading Screen
     sf::Clock maintimer;
     sf::Text lt;
     sf::Font comic;
@@ -131,7 +138,7 @@ int main()
     window.clear(sf::Color(255, 255, 255, 255));
     window.draw(mb);
     window.draw(lt);
-    window.display();
+    window.display(); // Draw the loading screen
     while (maintimer.getElapsedTime().asSeconds() <= 2) {
         
     }
@@ -167,8 +174,7 @@ int main()
         }
     }
     sf::Time quittime = maintimer.getElapsedTime();
-    while (maintimer.getElapsedTime().asSeconds() <= quittime.asSeconds() + 0.5) {
-
+    while (maintimer.getElapsedTime().asSeconds() <= quittime.asSeconds() + 0.5) { // Wait 0.5 seconds for exiting without sound artifacts
     }
     Log("Quitting...");
     return 0;
