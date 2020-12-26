@@ -7,5 +7,7 @@
 #include <SFML/Main.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio/Music.hpp>
+#ifdef __linux__
+#include <X11/Xlib.h>
+#endif
 
-// TODO: установите здесь ссылки на дополнительные заголовки, требующиеся для программы.

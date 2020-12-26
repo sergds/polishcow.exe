@@ -8,6 +8,11 @@ using namespace std;
 
 const char* megadataFile = "megadata.cow";
 bool isQuitting = false;
+#ifdef __linux__
+int InitFrames = 10;
+#else
+int InitFrames = 1;
+#endif
 
 /*Logs Stuff To Console*/
 void Log(string msg) {
@@ -111,6 +116,9 @@ void RendererThread(sf::RenderWindow* window) {
 /* Main Function */
 int main()
 {
+    #ifdef __linux__
+    XInitThreads();
+    #endif
     Log("polishcow.exe is Starting.");
     Log("Made by SergDS in 2020");
     // Start Preparing Loading Screen
@@ -135,12 +143,13 @@ int main()
 
     mb.setTexture(mb_tex, true);
     mb.setPosition(sf::Vector2f(0, 400));
-    window.clear(sf::Color(255, 255, 255, 255));
-    window.draw(mb);
-    window.draw(lt);
-    window.display(); // Draw the loading screen
-    while (maintimer.getElapsedTime().asSeconds() <= 2) {
-        
+    for(;InitFrames != 0;InitFrames--) {
+    	window.clear(sf::Color(255, 255, 255, 255));
+    	window.draw(mb);
+    	window.draw(lt);
+    	window.display();
+	}
+    while (maintimer.getElapsedTime().asSeconds() <= 1) {
     }
     sf::Thread rt(&RendererThread, &window);
     window.setActive(false);
